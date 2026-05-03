@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo - Ciência de Dados I</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Resumo CD I</h1>
+            <p>Introdução à Ciência de Dados I - Guia Completo de Estudos</p>
+            <div class="header-actions">
+                <button class="mode-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro">🌙 Modo Escuro</button>
+            </div>
+        </div>
+
+        <div class="quick-stats">
+            <div class="stat-box">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Temas Principais</div>
+            </div>
+            <div class="stat-box" style="background: linear-gradient(135deg, var(--success), var(--primary));">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Conceitos-Chave</div>
+            </div>
+            <div class="stat-box" style="background: linear-gradient(135deg, var(--warning), var(--danger));">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Ferramentas</div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Buscar conceitos, ferramentas, exemplos...">
+            <span class="search-icon">⌕</span>
+        </div>
+
+        <div id="accordionContainer">
+            <!-- TEMA 1: CONCEITOS FUNDAMENTAIS -->
+            <div class="accordion" data-category="fundamental">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">🎯</span>
+                        <span>Conceitos Fundamentais de Dados</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-fundamental">Essencial</span>
+                        
+                        <div class="concept-item">
+                            <div class="concept-title">📊 Dados vs Informação</div>
+                            <div class="concept-description">
+                                <strong>Dados:</strong> Fatos brutos, isolados, sem contexto. São valores quantificados sem significado completo.<br><br>
+                                <strong>Informação:</strong> Dados processados, contextualizados e com significado relevante.
+                            </div>
+                            <div class="example-box">
+                                <div class="example-label">💡 Exemplo</div>
+                                <strong>Dado:</strong> "25", "São Paulo", "14:30"<br>
+                                <strong>Informação:</strong> "Temperatura de 25°C em São Paulo às 14:30"
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🗂️ Tipos de Dados</div>
+                            <div class="concept-description">
+                                <strong>Estruturados:</strong> Organizados em <span class="highlight">tabelas com linhas e colunas</span> (SQL, Excel, CSV)<br><br>
+                                <strong>Semi-estruturados:</strong> Têm estrutura parcial com <span class="highlight">metadados</span> (JSON, XML)<br><br>
+                                <strong>Não estruturados:</strong> <span class="highlight">Sem formato fixo</span> (textos, imagens, vídeos, áudios)
+                            </div>
+                            <div class="example-box">
+                                <div class="example-label">💡 Exemplos</div>
+                                <strong>Estruturado:</strong> Planilha de vendas com colunas (produto, preço, data)<br>
+                                <strong>Semi-estruturado:</strong> Arquivo JSON de API<br>
+                                <strong>Não estruturado:</strong> Email, foto, vídeo do YouTube
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">💡 Dica de Prova</div>
+                            Lembre: <strong>XLSX é estruturado</strong> (tabelas), <strong>JSON/XML são semi-estruturados</strong>, e <strong>imagens/.jpg são não estruturados</strong>!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMA 2: FERRAMENTAS E TECNOLOGIAS -->
+            <div class="accordion" data-category="tools">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">🛠️</span>
+                        <span>Ferramentas e Tecnologias</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-tools">Ferramentas</span>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🐍 Python e Pandas</div>
+                            <div class="concept-description">
+                                <strong>Pandas:</strong> Biblioteca Python para <span class="highlight">manipulação e análise de dados</span><br><br>
+                                Principais funções:<br>
+                                • <code>df.head()</code> - Mostra primeiras linhas<br>
+                                • <code>df.info()</code> - Informações sobre o DataFrame<br>
+                                • <code>df.describe()</code> - Estatísticas descritivas
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">💼 Power BI</div>
+                            <div class="concept-description">
+                                Ferramenta de <span class="highlight">visualização E transformação de dados</span><br><br>
+                                <strong>DAX:</strong> Linguagem para criar medidas e cálculos<br>
+                                <strong>Power Query:</strong> Para transformar e limpar dados<br><br>
+                                ❌ <strong>FALSO:</strong> "Power BI é APENAS visualização" - também permite modelagem e ETL!
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🗄️ SQL - Structured Query Language</div>
+                            <div class="concept-description">
+                                Linguagem para <span class="highlight">consultar bancos de dados relacionais</span><br><br>
+                                Comandos principais:<br>
+                                • <code>SELECT * FROM clientes</code> - Retorna todas linhas e colunas<br>
+                                • <code>WHERE</code> - Filtra resultados<br>
+                                • <code>JOIN</code> - Relaciona tabelas
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">📊 Tableau e Looker Studio</div>
+                            <div class="concept-description">
+                                Ferramentas de BI para criar <span class="highlight">relatórios interativos e dashboards</span>
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">☁️ Cloud Computing</div>
+                            <div class="concept-description">
+                                <strong>AWS</strong> (Amazon), <strong>GCP</strong> (Google), <strong>Azure</strong> (Microsoft) - Provedores de computação em nuvem
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">⚠️ Atenção</div>
+                            Excel e Sheets NÃO ficaram obsoletos com Power BI! Continuam essenciais para análise de dados.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMA 3: ETL E PROCESSAMENTO -->
+            <div class="accordion" data-category="etl">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">⚙️</span>
+                        <span>ETL e Processamento de Dados</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-fundamental">Processo-Chave</span>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🔄 O que é ETL?</div>
+                            <div class="concept-description">
+                                <strong>E</strong>xtract (Extrair) → <strong>T</strong>ransform (Transformar) → <strong>L</strong>oad (Carregar)<br><br>
+                                <span class="highlight">Transform é a etapa mais demorada!</span> Consome maior parte do tempo do profissional.
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🧹 Transformação de Dados</div>
+                            <div class="concept-description">
+                                Etapas essenciais:<br>
+                                1. <strong>Limpeza:</strong> Remover inconsistências e erros<br>
+                                2. <strong>Transformação:</strong> Converter formatos, criar features<br>
+                                3. <strong>Garantia de qualidade:</strong> Validar dados processados
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">📁 Formatos de Arquivos</div>
+                            <div class="concept-description">
+                                • <strong>XLSX</strong> - Excel (estruturado, comum em BI)<br>
+                                • <strong>CSV</strong> - Valores separados por vírgula<br>
+                                • <strong>JSON</strong> - JavaScript Object Notation (semi-estruturado)<br>
+                                • <strong>PDF</strong> - Documentos (não estruturado)<br>
+                                • <strong>JPYNB</strong> - Jupyter Notebook
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🌐 Web Scraping</div>
+                            <div class="concept-description">
+                                Fonte de dados <span class="highlight">frágil e potencialmente obsoleta</span><br>
+                                Depende da estrutura do site, que pode mudar a qualquer momento.
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">💡 Deploy vs ETL</div>
+                            <strong>Deploy:</strong> Colocar modelo em produção<br>
+                            <strong>ETL/Transform:</strong> Limpar e transformar dados antes da análise
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMA 4: ESTATÍSTICA E VARIÁVEIS -->
+            <div class="accordion" data-category="stats">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">📈</span>
+                        <span>Estatística e Tipos de Variáveis</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-stats">Estatística</span>
+
+                        <div class="concept-item">
+                            <div class="concept-title">👥 População vs Amostra</div>
+                            <div class="concept-description">
+                                <strong>População:</strong> <span class="highlight">Conjunto TOTAL</span> de indivíduos em estudo<br>
+                                <strong>Amostra:</strong> <span class="highlight">Parte representativa</span> da população<br><br>
+                                <strong>Parâmetros:</strong> Descrevem a população (fixos)<br>
+                                <strong>Estimadores:</strong> Calculados da amostra (variam)
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🔢 Variáveis Quantitativas</div>
+                            <div class="concept-description">
+                                <strong>Discreta:</strong> Valores <span class="highlight">inteiros, contáveis</span><br>
+                                → Exemplo: Qtd de Filhos (0, 1, 2, 3...)<br><br>
+                                <strong>Contínua:</strong> Valores <span class="highlight">decimais, mensuráveis</span><br>
+                                → Exemplo: Altura (1.75m), Peso (70.5kg), Renda (R$ 3.456,78)
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🏷️ Variáveis Qualitativas</div>
+                            <div class="concept-description">
+                                <strong>Nominal:</strong> <span class="highlight">Sem ordem natural</span><br>
+                                → Exemplo: Estado Civil (solteiro, casado, divorciado), Cor<br><br>
+                                <strong>Ordinal:</strong> <span class="highlight">Com ordem natural</span><br>
+                                → Exemplo: Satisfação (1-5), Faixa Etária (0-18, 19-30...), Escolaridade
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">📊 Outliers e Medidas</div>
+                            <div class="concept-description">
+                                <strong>Outlier:</strong> Valor <span class="highlight">FORA do padrão esperado</span> (anomalia)<br><br>
+                                <strong>Média:</strong> Sensível a outliers<br>
+                                <strong>Mediana:</strong> Robusta a outliers (mais confiável com valores extremos)
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🎯 Macete para Prova</div>
+                            <strong>Pode ter .5?</strong><br>
+                            SIM → Contínua (altura, peso, renda)<br>
+                            NÃO → Discreta (filhos, pessoas, carros)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMA 5: VISUALIZAÇÃO DE DADOS -->
+            <div class="accordion" data-category="viz">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">📊</span>
+                        <span>Visualização de Dados</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-tools">Visualização</span>
+
+                        <div class="concept-item">
+                            <div class="concept-title">📈 Tipos de Gráficos</div>
+                            <div class="concept-description">
+                                <strong>Dispersão (Scatter):</strong> Pontos distribuídos em dois eixos<br>
+                                <strong>Histograma:</strong> Distribuição de frequências<br>
+                                <strong>Boxplot:</strong> Mostra mediana, quartis e outliers<br>
+                                <strong>Barras:</strong> Comparar categorias
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">📦 Boxplot (Diagrama de Caixa)</div>
+                            <div class="concept-description">
+                                <strong>Linha central:</strong> <span class="highlight">MEDIANA</span> (não é a média!)<br>
+                                <strong>Caixa:</strong> 1º e 3º quartis (50% dos dados)<br>
+                                <strong>Pontos nas extremidades:</strong> <span class="highlight">OUTLIERS</span>
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">📖 Data Storytelling</div>
+                            <div class="concept-description">
+                                Combina <span class="highlight">visualização + narrativa + contexto</span> para contar histórias com dados
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">⚠️ Pegadinha Comum</div>
+                            A linha central do boxplot é a MEDIANA, NÃO a média!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMA 6: MACHINE LEARNING -->
+            <div class="accordion" data-category="ml">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">🤖</span>
+                        <span>Machine Learning e IA</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-ml">Machine Learning</span>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🎓 Aprendizado Supervisionado</div>
+                            <div class="concept-description">
+                                <span class="highlight">PRECISA de dados rotulados</span> para treinar<br><br>
+                                <strong>Classificação:</strong> Prever categorias (spam/não spam)<br>
+                                <strong>Regressão:</strong> Prever valores numéricos (preço, temperatura)
+                            </div>
+                            <div class="example-box">
+                                <div class="example-label">💡 Exemplos</div>
+                                <strong>Classificação:</strong> Detectar fraude, diagnóstico médico<br>
+                                <strong>Regressão:</strong> Prever preço de imóvel, vendas futuras
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🔍 Aprendizado Não Supervisionado</div>
+                            <div class="concept-description">
+                                <span class="highlight">NÃO precisa de dados rotulados</span><br><br>
+                                <strong>Exemplo:</strong> K-Means (clusterização/agrupamento)
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">⚠️ Underfitting vs Overfitting</div>
+                            <div class="concept-description">
+                                <strong>Underfitting:</strong> Modelo <span class="highlight">muito simples</span>, não captura padrões<br>
+                                <strong>Overfitting:</strong> Modelo <span class="highlight">muito complexo</span>, "decora" dados de treino mas falha em dados novos
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🧠 Inteligência Artificial</div>
+                            <div class="concept-description">
+                                <strong>IA existe desde 1950!</strong> ChatGPT (2022) é apenas aplicação recente.<br><br>
+                                <strong>LLM:</strong> Large Language Models (GPT, Claude)<br>
+                                <strong>NLP:</strong> Processamento de Linguagem Natural<br>
+                                <strong>Deep Learning:</strong> Subcategoria de ML usando redes neurais
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🎯 Para Decorar</div>
+                            <strong>Classificação:</strong> Categorias (sim/não, spam/ham)<br>
+                            <strong>Regressão:</strong> Números (R$ 150,00, 25°C)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMA 7: GIT E VERSIONAMENTO -->
+            <div class="accordion" data-category="git">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">🔀</span>
+                        <span>Git e Versionamento</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-tools">Git</span>
+
+                        <div class="concept-item">
+                            <div class="concept-title">📝 Comandos Git Essenciais</div>
+                            <div class="concept-description">
+                                <code>git init</code> - Inicializa repositório local<br>
+                                <code>git add</code> - Prepara arquivos (staging)<br>
+                                <code>git commit</code> - Salva alterações localmente<br>
+                                <code>git push</code> - Envia commits para GitHub<br><br>
+                                ⚠️ <code>git add</code> NÃO envia automaticamente ao GitHub!
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">💻 Comandos Bash/Terminal</div>
+                            <div class="concept-description">
+                                <code>cd ..</code> - Volta para pasta anterior (pasta pai)<br>
+                                <code>ls</code> - Lista arquivos visíveis<br>
+                                <code>ls -a</code> - Lista TODOS arquivos (incluindo ocultos)
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🔄 Fluxo Git</div>
+                            1. <code>git add</code> (prepara)<br>
+                            2. <code>git commit</code> (salva local)<br>
+                            3. <code>git push</code> (envia pro GitHub)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMA 8: BANCOS DE DADOS -->
+            <div class="accordion" data-category="db">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-title">
+                        <span class="accordion-icon">🗄️</span>
+                        <span>Bancos de Dados</span>
+                    </div>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <span class="category-badge badge-fundamental">Bancos de Dados</span>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🔗 Bancos Relacionais (SQL)</div>
+                            <div class="concept-description">
+                                • <span class="highlight">Schema fixo</span> (estrutura definida)<br>
+                                • Tabelas ligadas por <span class="highlight">chaves (joins)</span><br>
+                                • Chave Primária + Chave Estrangeira<br>
+                                • Exemplos: MySQL, PostgreSQL, SQL Server
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">💾 Tipos de Variáveis em BD</div>
+                            <div class="concept-description">
+                                <strong>Idade:</strong> Integer (número inteiro)<br>
+                                <strong>Preço ($1e):</strong> Float (decimal)<br>
+                                <strong>Ativo/Inativo:</strong> Boolean (True/False)<br>
+                                <strong>Nome:</strong> String/Text
+                            </div>
+                        </div>
+
+                        <div class="concept-item">
+                            <div class="concept-title">🎯 Ponto de Partida de Projetos</div>
+                            <div class="concept-description">
+                                Identificar a <span class="highlight">necessidade/problema de negócio</span> é o primeiro passo!
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">💡 Intuição vs Dados</div>
+                            Decisões baseadas APENAS em intuição podem desperdiçar recursos.<br>
+                            Dados ajudam a tomar decisões informadas e eficientes!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            😕 Nenhum resultado encontrado para sua busca.
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(header) {
+            const accordion = header.parentElement;
+            const isActive = accordion.classList.contains('active');
+            
+            // Fechar todos os outros
+            document.querySelectorAll('.accordion').forEach(acc => {
+                acc.classList.remove('active');
+            });
+            
+            // Abrir/fechar o clicado
+            if (!isActive) {
+                accordion.classList.add('active');
+            }
+        }
+
+        // Busca
+        const searchInput = document.getElementById('searchInput');
+        const accordions = document.querySelectorAll('.accordion');
+        const noResults = document.getElementById('noResults');
+        const themeToggle = document.getElementById('themeToggle');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '☀️ Modo Claro';
+                themeToggle.setAttribute('aria-label', 'Ativar modo claro');
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggle.textContent = '🌙 Modo Escuro';
+                themeToggle.setAttribute('aria-label', 'Ativar modo escuro');
+            }
+        }
+
+        function toggleTheme() {
+            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            localStorage.setItem('theme', nextTheme);
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            let hasResults = false;
+
+            accordions.forEach(accordion => {
+                const content = accordion.textContent.toLowerCase();
+                
+                if (content.includes(searchTerm) || searchTerm === '') {
+                    accordion.style.display = 'block';
+                    hasResults = true;
+                    
+                    // Se está buscando, abrir acordeão automaticamente
+                    if (searchTerm !== '') {
+                        accordion.classList.add('active');
+                    }
+                } else {
+                    accordion.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = hasResults ? 'none' : 'block';
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+        // Abrir primeiro acordeão por padrão
+        document.querySelector('.accordion').classList.add('active');
+    </script>
+</body>
+</html>
