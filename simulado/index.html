@@ -221,6 +221,7 @@
             },
             {
                 question: "O gráfico a seguir é denominado:",
+                image: "https://images-cdn.kahoot.it/e2cbe49f-6a71-4bf1-9718-103536e8c655?auto=webp&dpr=1&width=600",
                 options: [
                     { text: "Histograma", correct: false },
                     { text: "Gráfico de dispersão", correct: true },
@@ -840,10 +841,17 @@
                 `;
             }
 
+            const imageHTML = question.image ? `
+                <div class="question-image" style="margin: 20px 0; text-align: center;">
+                    <img src="${question.image}" alt="Imagem da questão" style="max-width: 100%; border-radius: 12px;">
+                </div>
+            ` : '';
+
             card.innerHTML = `
                 <span class="category-badge">${question.category}</span>
                 <span class="question-number">Questão ${currentQuestion + 1} de ${questions.length}</span>
                 <div class="question-text">${question.question}</div>
+                ${imageHTML}
                 <div class="options">
                     ${optionsHTML}
                 </div>
